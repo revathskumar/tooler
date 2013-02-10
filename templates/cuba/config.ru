@@ -1,0 +1,3 @@
+require "./%{name}"
+
+run Cuba

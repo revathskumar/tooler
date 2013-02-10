@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+# Now load
+require "fileutils"
+require "cuba_template"
+require "template"
+require "tooler"
+require "error"
+
+
+# And run with ARGV
+begin
+	tooler = Tooler::CLI.new  :arguments => ARGV
+	tooler.start
+rescue Interrupt
+  p "Quitting..."
+  exit 1
+rescue Tooler::Error => error
+  p error.message
+  p "------------------"
+  exit 1
+end
