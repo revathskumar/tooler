@@ -4,7 +4,7 @@ Cuba.define do
 
   on get do
     on root do
-      res.write "%{name} authentication"
+      res.write "%{name}"
     end
   end
 end

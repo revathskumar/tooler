@@ -14,11 +14,7 @@ module Tooler
     def start
       p "Initializing #{@options[:template]}"
       p "Project Name #{@options[:name]}"
-      begin
-        send("copy_template_#{@options[:template].downcase}")
-      rescue Tooler::Error => e
-        
-      end
+      send("copy_template_#{@options[:template].downcase}")
     end
 
     private
@@ -31,9 +27,9 @@ module Tooler
       
     end
 
-    def method_missing a
-      p "method_missing"
-      raise Tooler::Error.new, "Invalid template"
+    def method_missing method
+      p "method_missing #{method}"
+      raise Tooler::Error, "Invalid template"
     end
   end
 end

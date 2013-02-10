@@ -1,3 +1,3 @@
-require "./%{name}"
+require "./lib/%{name}"
 
 run Cuba

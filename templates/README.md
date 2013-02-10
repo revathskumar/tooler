@@ -1,3 +1,7 @@
-# Buffer OAuth2
+# %{name}
 
-OAuth2 extension for [Bufferapp](http://bufferapp.com)
+%{description}
+
+
+## License
+Please see License
