@@ -6,9 +6,9 @@ module Tooler
     def initialize args
       @options = {template: "", name: ""}
       parse args[:arguments]
-      @options[:pwd] = ::FileUtils.pwd
+      @options[:pwd] = ::FileUtils.pwd + "/"
       @options[:name] = @options[:pwd].split('/').last
-      @options[:template_path] = File.dirname(__FILE__)+"/../templates/"
+      @options[:template_path] = File.dirname(__FILE__) + "/../templates/"
     end
 
     def start
