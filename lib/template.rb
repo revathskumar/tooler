@@ -2,11 +2,11 @@ module Tooler
   module Template
 
     def gemfile
-      ::FileUtils.cp @options[:template_path]+"/cuba/Gemfile", @options[:pwd]+"/Gemfile"
+      ::FileUtils.cp @options[:template_path]+"#{@options[:template]}/Gemfile", @options[:pwd]+"/Gemfile"
     end
 
     def procfile
-      ::FileUtils.cp @options[:template_path]+"/cuba/Procfile", @options[:pwd]+"/Procfile"
+      ::FileUtils.cp @options[:template_path]+"#{@options[:template]}/Procfile", @options[:pwd]+"/Procfile"
     end
 
     def gitignore
@@ -18,7 +18,7 @@ module Tooler
       ::FileUtils.cp @options[:template_path]+"license/#{name||'mit'}.txt", @options[:pwd]+"/License"
     end
 
-    def readme 
+    def readme
       p "Copying README"
       contents = file_read @options[:template_path]+"README.md"
       contents = contents % {name: @options[:name], description: ""}
