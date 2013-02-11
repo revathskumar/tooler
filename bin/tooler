@@ -2,8 +2,6 @@
 
 # Now load
 require "fileutils"
-require "cuba_template"
-require "sinatra_template"
 require "template"
 require "tooler"
 require "error"
