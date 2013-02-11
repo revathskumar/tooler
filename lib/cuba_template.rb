@@ -14,13 +14,13 @@ module Tooler
       procfile
     end
 
-    def template
+    def config_ru
       contents = file_read @options[:template_path]+'cuba/config.ru'
       contents = contents % {name: @options[:name]}
       file_write @options[:pwd]+"/config.ru", contents
     end
 
-    def config_ru
+    def template
       contents = file_read @options[:template_path]+'cuba/cuba_template.rb'
       contents = contents % {name: @options[:name]}
       file_write @options[:pwd]+"/lib/#{@options[:name]}.rb", contents
