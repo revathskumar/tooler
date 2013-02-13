@@ -2,10 +2,7 @@
 
 # Now load
 require "fileutils"
-require "template"
 require "tooler"
-require "error"
-
 
 # And run with ARGV
 begin
@@ -15,7 +12,8 @@ rescue Interrupt
   p "Quitting..."
   exit 1
 rescue Tooler::Error => error
-  p error.message
-  p "------------------"
+  print error.message
+  print "\n"
+  print Tooler.help
   exit 1
 end

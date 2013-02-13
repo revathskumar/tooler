@@ -15,7 +15,9 @@ module Tooler
 
     def license name=nil
       p "Copying license"
-      ::FileUtils.cp @options[:template_path]+"license/#{name||'mit'}.txt", @options[:pwd]+"/License"
+      contents = file_read @options[:template_path]+"license/#{name||'mit'}.txt"
+      contents = contents % {username: @options[:username] || "[Replace your fullname]", year: Time.new.strftime("%Y")}
+      file_write @options[:pwd]+"/License", contents
     end
 
     def readme
