@@ -14,21 +14,18 @@ module Tooler
     end
 
     def license name=nil
-      p "Copying license"
       contents = file_read @options[:template_path]+"license/#{name||'mit'}.txt"
       contents = contents % {username: @options[:username] || "[Replace your fullname]", year: Time.new.strftime("%Y")}
       file_write @options[:pwd]+"/License", contents
     end
 
     def readme
-      p "Copying README"
       contents = file_read @options[:template_path]+"README.md"
       contents = contents % {name: @options[:name], description: ""}
       file_write @options[:pwd]+"/README.md", contents
     end
 
     def create_dir name
-      p "create dir #{name}"
       ::FileUtils.mkdir @options[:pwd]+"/"+name
     end
 
