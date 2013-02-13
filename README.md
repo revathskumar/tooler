@@ -1,4 +1,4 @@
-# Tooler
+# Tooler [![Build Status](https://travis-ci.org/revathskumar/tooler.png?branch=master)](https://travis-ci.org/revathskumar/tooler)
 ## Ruby Project bolerplater
 
 ### What it does
