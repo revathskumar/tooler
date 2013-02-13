@@ -24,6 +24,9 @@ module Tooler
     private
 
     def parse args
+      if args.empty?
+        raise Tooler::Error, "Should specify a template"
+      end
       @options[:template] = args[0].downcase
     end
 
