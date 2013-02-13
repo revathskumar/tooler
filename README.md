@@ -9,13 +9,18 @@
  * Add Gemfile
  * Add Procfile
 
+### Usage
+    $ cd project/directory
+    $ tooler [cuba/sinatra]
+    $ thin -R config.ru start
+
 ### Current Support
  * Cuba
  * Sinatra
 
 ### TODO
  * Initialize git
- * Ask some questions from users
+ * Get input from users.
  * Add support to create a ruby gem
  * Write tests for tooler
  * Generate test template
