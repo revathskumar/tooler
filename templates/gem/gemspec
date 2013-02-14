@@ -1,0 +1,26 @@
+
+lib = File.expand_path('../lib',__FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require "%{name}/version"
+
+Gem::Specification.new do |s|
+  s.name          = "%{name}"
+  s.version       = ("#{name}".Constantize)::VERSION
+  s.date          = Time.new.strftime("%Y-%m-%d")
+  s.summary       = "#{name.Constantize}"
+  s.description   = "Ruby boilerplater"
+  s.authors       = ["%{username}"]
+  s.email         = ["%{email}"]
+  s.homepage      = "http://revathskumar.github.com/tooler/"
+  s.files         = ["License", "README.md","%{name}.gemspec"]
+  s.files         += Dir.glob("lib/**/*")
+  s.files         += Dir.glob("bin/*")
+  s.files         += Dir.glob("spec/**/*")
+  s.license       = 'MIT'
+  s.bindir        = 'bin'
+  s.require_paths = ['lib']
+  # uncomments below line if you have executable
+  # s.executables   = %w("%{name}")
+  s.test_files    = Dir.glob("spec/**/*")
+end
