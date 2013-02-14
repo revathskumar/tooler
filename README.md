@@ -9,6 +9,9 @@
  * Add Gemfile
  * Add Procfile
 
+### Install
+    $ gem install tooler
+
 ### Usage
     $ cd project/directory
     $ tooler [cuba/sinatra]
